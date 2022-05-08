@@ -19,7 +19,7 @@ class MainActivity : BottomNavigationBlueprintActivity() {
     override fun amazonInstallsEnabled(): Boolean = false
     override fun checkLPF(): Boolean = true
     override fun checkStores(): Boolean = true
-    override val isDebug: Boolean = BuildConfig.DEBUG
+    override val isDebug: Boolean = false
 
     /**
      * This is your app's license key. Get yours on Google Play Dev Console.
@@ -35,7 +35,7 @@ class MainActivity : BottomNavigationBlueprintActivity() {
      */
     override fun getLicenseChecker(): PiracyChecker? {
         destroyChecker() // Important
-        return if (BuildConfig.DEBUG) null else super.getLicenseChecker()
+        return null
     }
 
     override fun defaultTheme(): Int = R.style.MyApp_Default
